@@ -1,5 +1,6 @@
 package com.example.kldstadium.recycler
 
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -18,12 +19,13 @@ class RecyclerViewAdapter(private val users: ArrayList<User>): RecyclerView.Adap
             private val USER_KEY = "USER"
         }
 
+
         fun bindUser(user: User) {
             this.user = user
             view.avatar_image.load("https://ohcat.ru/assets/images/img_gallery/115.jpg");
-            view.fullName_text.text = user.name
-            view.dateOfVisit_text.text = user.dateOfVisit
-            view.description_text.text = user.description
+            view.fullName_text.text = user.name.toString()
+            view.dateOfVisit_text.text = user.date.toString()
+            view.description_text.text = user.purpose.toString()
         }
 
 
@@ -33,8 +35,8 @@ class RecyclerViewAdapter(private val users: ArrayList<User>): RecyclerView.Adap
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflatedView = parent.inflate(R.layout.user_card, false)
-        return ViewHolder(inflatedView)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.user_card, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

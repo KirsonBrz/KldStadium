@@ -2,6 +2,9 @@ package com.example.kldstadium
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -19,7 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var userRecyclerView: RecyclerView
+    //private lateinit var userRecyclerView: RecyclerView
     private lateinit var adapter: RecyclerViewAdapter
     private lateinit var users: ArrayList<User>
     private lateinit var db: FirebaseFirestore
@@ -27,19 +30,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        linearLayoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = linearLayoutManager
-
-        userRecyclerView = findViewById(R.id.recyclerView)
-
+        val recyclerview = findViewById<RecyclerView>(R.id.recyclerView)
+        recyclerview.layoutManager = LinearLayoutManager(this)
         db = Firebase.firestore
-
         queryAllUsers()
-
-
-
-
-        adapter = RecyclerViewAdapter(users);
+        //val newUser:User
+        //val users = ArrayList<User>()
+         adapter = RecyclerViewAdapter(users)
+        recyclerview.adapter = adapter
 
 
 //        userList.withModels {
@@ -55,17 +53,17 @@ class MainActivity : AppCompatActivity() {
             .addOnCompleteListener(OnCompleteListener<QuerySnapshot?> { task ->
                 if (task.isSuccessful) {
                     for (document in task.result!!) {
-                        // Log.d(TAG, document.id + " => " + document.data)
+                         Log.d("TAG", document.id + " => " + document.data)
                         val user: User = document.toObject(User::class.java)
                         users.add(user)
                         adapter.notifyDataSetChanged()
                     }
-//                    Log.d(TAG, "After for loop: " + users.toString())
+                    Log.d("TAG", "After for loop: " + users.toString())
                     //Here the list is OK. Filled with projects.
                     //I'd like to save the state of the list from here
                 } else {
-                    //Log.d(TAG, "Error getting document: ", task.exception)
-                    //Toast.makeText(applicationContext, R.string.error, Toast.LENGTH_SHORT).show()
+                    Log.d("TAG", "Error getting document: ", task.exception)
+                    Toast.makeText(applicationContext, "GOPA", Toast.LENGTH_SHORT).show()
                 }
             })
 
