@@ -1,47 +1,53 @@
-package com.example.kldstadium
+package com.example.kldstadium.views
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.kldstadium.R
+import com.example.kldstadium.extensions.Extensions.toast
 
 import com.example.kldstadium.recycler.RecyclerViewAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_main.*
 
 import com.google.firebase.firestore.QuerySnapshot
 import com.example.kldstadium.models.User
+import com.example.kldstadium.utils.FirebaseUtils.firebaseAuth
 
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.android.synthetic.main.activity_home.*
 
 
-class MainActivity : AppCompatActivity() {
+class HomeActivity : AppCompatActivity() {
     private lateinit var linearLayoutManager: LinearLayoutManager
-    //private lateinit var userRecyclerView: RecyclerView
     private lateinit var adapter: RecyclerViewAdapter
     private lateinit var users: ArrayList<User>
     private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerview.layoutManager = LinearLayoutManager(this)
         db = Firebase.firestore
         queryAllUsers()
-        //val newUser:User
-        //val users = ArrayList<User>()
-         adapter = RecyclerViewAdapter(users)
+
+        btnSignOut.setOnClickListener {
+            firebaseAuth.signOut()
+            startActivity(Intent(this, CreateAccountActivity::class.java))
+            toast("signed out")
+            finish()
+        }
+
+        adapter = RecyclerViewAdapter(users)
         recyclerview.adapter = adapter
 
 
-//        userList.withModels {
-//        }
     }
 
     private fun queryAllUsers() {

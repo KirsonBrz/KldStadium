@@ -9,15 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KldStadium">
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
+        <activity
+            android:name=".views.SignInActivity"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".views.CreateAccountActivity"
+            android:exported="true" />
+        <activity
+            android:name=".views.HomeActivity"
+            android:exported="true">
         </activity>
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
