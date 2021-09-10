@@ -6,14 +6,93 @@
     android:layout_height="match_parent"
     tools:context=".views.HomeActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#E9E4E4"
+
+        app:layout_constraintBottom_toTopOf="@id/swipe_refresh_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="12dp"
+            app:strokeWidth="1dp">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/colorPrimary"
+                app:tabIndicatorGravity="stretch"
+                app:tabMaxWidth="0dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@android:color/white"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+                app:tabTextColor="?attr/colorPrimary">
+            </com.google.android.material.tabs.TabLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"/>
+        android:id="@+id/swipe_refresh_layout"
+        android:layout_marginTop="70dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:background="#E9E4E4"/>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/viewEmptyUsers1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                style="@style/PizzaGuy"
+                android:src="@drawable/pizza_monster" />
+
+            <TextView
+                style="@style/Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="На данный момент заявок нет"
+                android:textColor="#737272" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnSignOut"
+        android:src="@drawable/ic_baseline_login_24"
+        android:backgroundTint="@color/design_default_color_primary"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

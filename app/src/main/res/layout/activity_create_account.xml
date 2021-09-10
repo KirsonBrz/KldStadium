@@ -9,17 +9,20 @@
     tools:ignore="Autofill">
 
     <TextView
+        android:id="@+id/registration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="create account"
+        android:text="Регистрация"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/etEmail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.907" />
 
     <EditText
         android:id="@+id/etEmail"
@@ -29,6 +32,7 @@
         android:hint="email"
         android:inputType="textEmailAddress"
         android:padding="10dp"
+        android:background="@drawable/rounded_edittext"
         app:layout_constraintBottom_toTopOf="@id/etPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,10 +44,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:hint="password"
+        android:hint="пароль"
         android:inputType="textPassword"
-        android:maxLength="15"
+        android:maxLength="30"
         android:padding="10dp"
+        android:background="@drawable/rounded_edittext"
         app:layout_constraintBottom_toTopOf="@id/etConfirmPassword"
         app:layout_constraintEnd_toEndOf="@id/etEmail"
         app:layout_constraintStart_toStartOf="@id/etEmail"
@@ -54,9 +59,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:hint="confirm_password"
+        android:hint="подтвердите пароль"
         android:inputType="textPassword"
-        android:maxLength="15"
+        android:maxLength="30"
+        android:background="@drawable/rounded_edittext"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@id/btnCreateAccount"
         app:layout_constraintEnd_toEndOf="@id/etPassword"
@@ -66,9 +72,9 @@
     <Button
         android:id="@+id/btnCreateAccount"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginVertical="20dp"
-        android:text="create_account"
+        android:text="Регистрация"
         app:layout_constraintBottom_toTopOf="@id/btnSignIn2"
         app:layout_constraintEnd_toEndOf="@id/etConfirmPassword"
         app:layout_constraintStart_toStartOf="@id/etConfirmPassword"
@@ -78,7 +84,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="or"
+        android:text="или"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="16sp"
@@ -90,13 +96,21 @@
     <Button
         android:id="@+id/btnSignIn2"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
         android:layout_marginVertical="20dp"
         android:backgroundTint="@color/black"
-        android:text="sign_in"
+        android:text="Войдите в аккаунт"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/btnCreateAccount"
         app:layout_constraintStart_toStartOf="@id/btnCreateAccount"
         app:layout_constraintTop_toBottomOf="@id/btnCreateAccount" />
-
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="229dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/registration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_kld" />
 </androidx.constraintlayout.widget.ConstraintLayout>
