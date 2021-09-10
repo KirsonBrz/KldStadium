@@ -26,7 +26,6 @@ class CreateAccountActivity : AppCompatActivity() {
 
         btnSignIn2.setOnClickListener {
             startActivity(Intent(this, SignInActivity::class.java))
-            toast("please sign into your account")
             finish()
         }
 
@@ -50,7 +49,7 @@ class CreateAccountActivity : AppCompatActivity() {
                 }
             }
         } else {
-            toast("passwords are not matching !")
+            toast("Пароль не подходит!")
         }
         return identical
     }
@@ -65,12 +64,12 @@ class CreateAccountActivity : AppCompatActivity() {
             firebaseAuth.createUserWithEmailAndPassword(userEmail, userPassword)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        toast("created account successfully !")
+                        toast("Аккаунт успешно создан!")
                         sendEmailVerification()
                         startActivity(Intent(this, HomeActivity::class.java))
                         finish()
                     } else {
-                        toast("failed to Authenticate !")
+                        toast("Проверьте правильность введенных данных!")
                     }
                 }
         }
@@ -84,7 +83,7 @@ class CreateAccountActivity : AppCompatActivity() {
         firebaseUser?.let {
             it.sendEmailVerification().addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    toast("email sent to $userEmail")
+                    toast("email отправлен на почту $userEmail")
                 }
             }
         }

@@ -36,7 +36,7 @@ class SignInActivity : AppCompatActivity() {
         val user: FirebaseUser? = firebaseAuth.currentUser
         user?.let {
             startActivity(Intent(this, HomeActivity::class.java))
-            toast("welcome back")
+
         }
     }
 
@@ -51,10 +51,10 @@ class SignInActivity : AppCompatActivity() {
                 .addOnCompleteListener { signIn ->
                     if (signIn.isSuccessful) {
                         startActivity(Intent(this, HomeActivity::class.java))
-                        toast("signed in successfully")
+
                         finish()
                     } else {
-                        toast("sign in failed")
+                        toast("Произошла ошибка при вводе данных")
                     }
                 }
         } else {
