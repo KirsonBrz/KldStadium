@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1002760212551",
+    "firebase_url": "https://hackathon-2021-ba-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "hackathon-2021-ba",
+    "storage_bucket": "hackathon-2021-ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002760212551:android:a46b94346f1a8265c2e162",
+        "android_client_info": {
+          "package_name": "com.example.kldstadium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1002760212551-up7bobu5ock5dcqemut8b47b9rqr90gi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.kldstadium",
+            "certificate_hash": "8665b6bbac625ee51df0198cdb943abfcc14cc47"
+          }
+        },
+        {
+          "client_id": "1002760212551-cs63jg9vrqv0494kc3e8kjd2brajf5vn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB4gklsQ3rTEsCHCXlpgPbHr439dDur3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1002760212551-cs63jg9vrqv0494kc3e8kjd2brajf5vn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

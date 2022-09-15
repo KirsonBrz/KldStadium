@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.SignInActivity"
+    tools:ignore="Autofill, LabelFor">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вход "
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/etSignInEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.919" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="или"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCreateAccount2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+
+    <EditText
+        android:id="@+id/etSignInEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:hint="e-mail"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
+        android:background="@drawable/rounded_edittext"
+        app:layout_constraintBottom_toTopOf="@+id/etSignInPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <EditText
+        android:id="@+id/etSignInPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        android:maxLength="30"
+        android:background="@drawable/rounded_edittext"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignIn"
+        app:layout_constraintEnd_toEndOf="@+id/etSignInEmail"
+        app:layout_constraintStart_toStartOf="@+id/etSignInEmail"
+        app:layout_constraintTop_toBottomOf="@+id/etSignInEmail" />
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/black"
+        android:text="Войти"
+        app:layout_constraintBottom_toTopOf="@+id/btnCreateAccount2"
+        app:layout_constraintEnd_toEndOf="@+id/etSignInPassword"
+        app:layout_constraintStart_toStartOf="@+id/etSignInPassword"
+        app:layout_constraintTop_toBottomOf="@+id/etSignInPassword" />
+
+    <Button
+        android:id="@+id/btnCreateAccount2"
+        android:layout_width="0dp"
+
+        android:layout_height="60dp"
+        android:layout_marginVertical="20dp"
+        android:text="Зарегистрируйтесь"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btnSignIn"
+        app:layout_constraintStart_toStartOf="@+id/btnSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="229dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_kld" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

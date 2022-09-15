@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/KldStadium/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.2537037037037037" />
+        <entry key="..\:/KldStadium/app/src/main/res/drawable/logo_kld.xml" value="0.3828125" />
+        <entry key="..\:/KldStadium/app/src/main/res/drawable/rounded_edittext.xml" value="0.3828125" />
+        <entry key="..\:/KldStadium/app/src/main/res/layout/activity_create_account.xml" value="0.33" />
+        <entry key="..\:/KldStadium/app/src/main/res/layout/activity_firebase_uiactivity.xml" value="0.2859375" />
+        <entry key="..\:/KldStadium/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/KldStadium/app/src/main/res/layout/activity_main.xml" value="0.28703703703703703" />
+        <entry key="..\:/KldStadium/app/src/main/res/layout/activity_sigh_in.xml" value="0.33" />
+        <entry key="..\:/KldStadium/app/src/main/res/layout/fr1.xml" value="0.36666666666666664" />
+        <entry key="..\:/KldStadium/app/src/main/res/layout/fr2.xml" value="0.36666666666666664" />
+        <entry key="..\:/KldStadium/app/src/main/res/layout/user_card.xml" value="0.5" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
