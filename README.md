@@ -40,3 +40,10 @@ III этап
 
 4) Окончательный переход с Java на Kotlin.
 
+
+
+https://user-images.githubusercontent.com/52128742/205908822-c5125306-4ed8-40ec-b0e2-529b4099ac5c.mp4
+
+
+
+
